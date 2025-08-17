@@ -17,13 +17,11 @@ float vertices[] = {
 unsigned int indices[] = { 0, 1, 2, 2, 3, 0 };
 
 void processInput(GLFWwindow* window, Game& game) {
-    // W and S swapped to fix inverted movement
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) game.changeDirection(2); // W now moves DOWN
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) game.changeDirection(1); // right stays
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) game.changeDirection(0); // S now moves UP
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) game.changeDirection(3); // left stays
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) game.changeDirection(2); 
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) game.changeDirection(1); 
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) game.changeDirection(0); 
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) game.changeDirection(3); 
 }
-
 
 int main() {
     if (!glfwInit()) { std::cout << "GLFW init failed\n"; return -1; }
@@ -58,7 +56,7 @@ int main() {
 
     float lastTime = 0.0f;
     float timer = 0.0f;
-    float updateRate = 0.3f; // Snake moves every 0.1 seconds
+    float updateRate = 0.3f;
 
     while (!glfwWindowShouldClose(window)) {
         float currentTime = static_cast<float>(glfwGetTime());
@@ -70,8 +68,12 @@ int main() {
         processInput(window, game);
 
         if (timer >= updateRate) {
-            game.update();
+            bool collided = game.update();
             timer = 0.0f;
+            if (collided) {
+                std::cout << "Game Over! Snake collided with itself.\n";
+                glfwSetWindowShouldClose(window, true);
+            }
         }
 
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -80,7 +82,7 @@ int main() {
         shader.use();
         glBindVertexArray(VAO);
 
-        // Render snake (green)
+        // Render snake
         shader.setFloat("ourColor_r", 0.0f);
         shader.setFloat("ourColor_g", 1.0f);
         shader.setFloat("ourColor_b", 0.0f);
@@ -96,7 +98,7 @@ int main() {
             glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         }
 
-        // Render food (red)
+        // Render food
         shader.setFloat("ourColor_r", 1.0f);
         shader.setFloat("ourColor_g", 0.0f);
         shader.setFloat("ourColor_b", 0.0f);

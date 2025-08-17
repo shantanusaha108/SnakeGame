@@ -1,9 +1,6 @@
 #pragma once
-#ifndef SHADER_H
-#define SHADER_H
-
-#include <string>
 #include <glad/glad.h>
+#include <string>
 
 class Shader {
 public:
@@ -14,5 +11,3 @@ public:
     void setFloat(const std::string& name, float value) const;
     void setInt(const std::string& name, int value) const;
 };
-
-#endif

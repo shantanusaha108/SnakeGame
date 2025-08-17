@@ -6,7 +6,7 @@
 Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     std::string vertexCode, fragmentCode;
 
-    // Open files
+    
     std::ifstream vShaderFile(vertexPath);
     std::ifstream fShaderFile(fragmentPath);
 
@@ -64,7 +64,6 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
         std::cout << "Shader Program linking failed:\n" << infoLog << std::endl;
     }
 
-    // Delete shaders as they are linked into program now
     glDeleteShader(vertex);
     glDeleteShader(fragment);
 }
