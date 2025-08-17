@@ -31,7 +31,7 @@ bool Game::update() {
     // Check self-collision before growing
     if (checkCollision()) return true;
 
-    // Check for food collision and grow
+    // Check for food collision and grow snake
     if (snake[0].x == food.x && snake[0].y == food.y) {
         snake.push_back(snake.back()); 
         spawnFood();
