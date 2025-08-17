@@ -8,12 +8,13 @@ All game logic, rendering, and input handling are implemented manually, without 
 ## 🛠️ Tech Stack
 
 <p>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++" width="60" height="60" style="margin-right:10px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/OpenGL_logo.svg" alt="OpenGL" width="80" height="60" style="margin-right:10px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/GLFW_logo.svg" alt="GLFW" width="80" height="60" style="margin-right:10px;">
-  <img src="https://raw.githubusercontent.com/Dav1dde/glad/master/logo/glad.svg" alt="GLAD" width="80" height="60" style="margin-right:10px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Visual_Studio_2013-2019_logo.svg" alt="Visual Studio" width="80" height="60">
+  <img src="media/cpp.png" alt="C++" width="60" height="60" style="margin-right:10px;">
+  <img src="media/opengl.png" alt="OpenGL" width="80" height="60" style="margin-right:10px;">
+  <img src="media/glfw.png" alt="GLFW" width="80" height="60" style="margin-right:10px;">
+  <img src="media/glad.png" alt="GLAD" width="80" height="60" style="margin-right:10px;">
+  <img src="media/vs.png" alt="Visual Studio" width="80" height="60">
 </p>
+
 
 ---
 
