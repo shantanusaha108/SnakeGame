@@ -1,7 +1,7 @@
 # 🐍 Snake Game
 
 **Classic Snake game coded entirely from scratch in C++ using OpenGL, GLFW, and GLAD.**  
-All game logic, rendering, and input handling are implemented manually, without using any game engines. A pure graphics programming and game logic exercise!
+Every aspect of the game from rendering the snake and food, handling keyboard input, detecting collisions, to managing the game loop is implemented manually, without relying on any game engines. This project is a complete exercise in graphics programming and game logic, demonstrating low-level control over rendering and gameplay mechanics.
 
 ---
 
